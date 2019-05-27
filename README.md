@@ -10,7 +10,7 @@ Python backend developer roadmap.
 - SOLID, KISS, YAGNI
 - Design Patterns
 - [SSH](#ssh)
-- [TCP/IP, HTTP, HTTPS and APIs] (#network-communication-and-security-protocols)
+- [TCP/IP, HTTP, HTTPS and APIs](#network-communication-and-security-protocols)
 - Semantic versioning
 - Character Encodings
 - Licenses
