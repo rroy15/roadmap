@@ -11,6 +11,7 @@ Python backend developer roadmap.
 - Design Patterns
 - [SSH](#ssh)
 - [TCP/IP, HTTP, HTTPS and APIs](#network-communication-and-security-protocols)
+- [Regular Expressions](#regular-expressions)
 - Semantic versioning
 - Character Encodings
 - Licenses
@@ -62,6 +63,7 @@ Python backend developer roadmap.
 
 > **80** и **8080** порты для **HTTP**; **FTP** на 20 и 21; **SSH** на 22; **DNS** на порт UDP 53;
 
+### Regular Expressions
 
 
 ## Backend
