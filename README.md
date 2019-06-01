@@ -23,6 +23,19 @@ Python backend developer roadmap.
 - Pip
 - Relational DB and SQL (Postgresql)
 - Django
+  - Models and databases
+    - Models
+    - Making queries
+    - Aggregation
+    - Search
+    - Managers
+    - Performing raw SQL queries
+    - Database transactions
+    - Multiple databases
+    - Tablespaces
+    - Database access optimization
+    - Database instrumentation
+    - Examples
 - NoSQL DB (MongoDB)
 - Caching
 - REST API
