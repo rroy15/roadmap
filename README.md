@@ -16,6 +16,7 @@ Python backend developer roadmap.
 - Character Encodings
 - Licenses
 - Data structures and algorithms
+- [How Browsers Work](https://www.html5rocks.com/ru/tutorials/internals/howbrowserswork/)
 
 [Backend](#backend)
 
