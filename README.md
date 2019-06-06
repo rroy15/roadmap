@@ -6,7 +6,11 @@ Python backend developer roadmap.
 [General](#general)
 
 - Git and Gitflow
-- Terminal
+- [Terminal](#terminal)
+  - [Basics](#basics)
+  - [Manipulating files](#manipulating-files)
+  - [Inspecting files](#inspecting-files)
+  - [Directories](#directories)
 - [SOLID, KISS, YAGNI](#solid-kiss-yagni)
 - Design Patterns
 - [SSH](#ssh)
@@ -48,6 +52,339 @@ Python backend developer roadmap.
 - Web sockets
 
 ## General
+
+### Terminal
+
+Great resource for beginners - https://www.learnenough.com/command-line-tutorial/basics
+Additional recources:
+
+- [Conquering the Command Line by Mark Bates](http://conqueringthecommandline.com/book/frontmatter)
+
+
+Key points:
+
+- use `man`! Stands for _manual_.
+- xdg-open <file_name/directory_name>
+- `!command` or call previous command `!!`
+- `cd -` change to previos directory
+- `less`
+- piping `|`
+- redirect `>`
+- append `>>`
+- get `<`
+
+#### Basics
+
+<div id="table-man_echo" data-tralics-id="uid59" data-number="1.2" class="table">
+<table class="tabular">
+<tbody>
+<tr class="bottom_border">
+<td class="align_left"><strong>Command</strong></td>
+<td class="align_left"><strong>Description</strong></td>
+<td class="align_left"><strong>Example</strong></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">echo &lt;string&gt;</code></td>
+<td class="align_left">Print string to screen</td>
+<td class="align_left"><code>$ echo hello</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">man &lt;command&gt;</code></td>
+<td class="align_left">Display manual page for command</td>
+<td class="align_left"><code>$ man echo</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">⌃C</code></td>
+<td class="align_left">Get out of trouble</td>
+<td class="align_left"><code>$ tail ⌃C</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">⌃A</code></td>
+<td class="align_left">Move to beginning of line</td>
+<td class="align_left"></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">⌃E</code></td>
+<td class="align_left">Move to end of line</td>
+<td class="align_left"></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">⌃U</code></td>
+<td class="align_left">Delete to beginning of line</td>
+<td class="align_left"></td>
+</tr>
+<tr>
+<td class="align_left">Option-click</td>
+<td class="align_left">Move cursor to location clicked</td>
+<td class="align_left"></td>
+</tr>
+<tr>
+<td class="align_left">Up &amp; down arrow</td>
+<td class="align_left">Scroll through previous commands</td>
+<td class="align_left"></td>
+</tr>
+<tr>
+<td class="align_left">
+<code class="tt">clear</code> or <code class="tt">⌃L</code>
+</td>
+<td class="align_left">Clear screen</td>
+<td class="align_left"><code>$ clear</code></td>
+</tr>
+<tr>
+<td class="align_left">
+<code class="tt">exit</code> or <code class="tt">⌃D</code>
+</td>
+<td class="align_left">Exit terminal</td>
+<td class="align_left"><code>$ exit</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+#### Manipulating files
+
+<table class="tabular">
+<tbody>
+<tr class="bottom_border">
+<td class="align_left"><strong>Command</strong></td>
+<td class="align_left"><strong>Description</strong></td>
+<td class="align_left"><strong>Example</strong></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">&gt;</code></td>
+<td class="align_left">Redirect output to filename</td>
+<td class="align_left"><code>$ echo foo &gt; foo.txt</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">&gt;&gt;</code></td>
+<td class="align_left">Append output to filename</td>
+<td class="align_left"><code>$ echo bar &gt;&gt; foo.txt</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">cat &lt;file&gt;</code></td>
+<td class="align_left">Print contents of file to screen</td>
+<td class="align_left"><code>$ cat hello.txt</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">diff &lt;f1&gt; &lt;f2&gt;</code></td>
+<td class="align_left">Diff files 1 &amp; 2</td>
+<td class="align_left"><code>$ diff foo.txt bar.txt</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">ls</code></td>
+<td class="align_left">List directory or file</td>
+<td class="align_left"><code>$ ls hello.txt</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">ls -l</code></td>
+<td class="align_left">List long form</td>
+<td class="align_left"><code>$ ls -l hello.txt</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">ls -rtl</code></td>
+<td class="align_left">Long by reverse modification time</td>
+<td class="align_left"><code>$ ls -rtl</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">ls -a</code></td>
+<td class="align_left">List all (including hidden)</td>
+<td class="align_left"><code>$ ls -a</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">touch &lt;file&gt;</code></td>
+<td class="align_left">Create an empty file</td>
+<td class="align_left"><code>$ touch foo</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">mv &lt;old&gt; &lt;new&gt;</code></td>
+<td class="align_left">Rename (move) from old to new</td>
+<td class="align_left"><code>$ mv foo bar</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">cp &lt;old&gt; &lt;new&gt;</code></td>
+<td class="align_left">Copy old to new</td>
+<td class="align_left"><code>$ cp foo bar</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">rm &lt;file&gt;</code></td>
+<td class="align_left">Remove (delete) file</td>
+<td class="align_left"><code>$ rm foo</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">rm -f &lt;file&gt;</code></td>
+<td class="align_left">Force-remove file</td>
+<td class="align_left"><code>$ rm -f bar</code></td>
+</tr>
+</tbody>
+</table>
+
+#### Inspecting files
+
+<table class="tabular">
+<tbody>
+<tr class="bottom_border">
+<td class="align_left"><strong>Command</strong></td>
+<td class="align_left"><strong>Description</strong></td>
+<td class="align_left"><strong>Example</strong></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">curl</code></td>
+<td class="align_left">Interact with URLs</td>
+<td class="align_left"><code>$ curl -O https://example.com</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">which</code></td>
+<td class="align_left">Locate a program on the path</td>
+<td class="align_left"><code>$ which curl</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">head &lt;file&gt;</code></td>
+<td class="align_left">Display first part of file</td>
+<td class="align_left"><code>$ head foo</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">tail &lt;file&gt;</code></td>
+<td class="align_left">Display last part of file</td>
+<td class="align_left"><code>$ tail bar</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">wc &lt;file&gt;</code></td>
+<td class="align_left">Count lines, words, bytes</td>
+<td class="align_left"><code>$ wc foo</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">cmd1 | cmd2</code></td>
+<td class="align_left">Pipe <code class="tt">cmd1</code> to <code class="tt">cmd2</code>
+</td>
+<td class="align_left"><code>$ head foo | wc</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">ping &lt;url&gt;</code></td>
+<td class="align_left">Ping a server URL</td>
+<td class="align_left"><code>$ ping google.com</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">less &lt;file&gt;</code></td>
+<td class="align_left">View file contents interactively</td>
+<td class="align_left"><code>$ less foo</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">grep &lt;string&gt; &lt;file&gt;</code></td>
+<td class="align_left">Find string in file</td>
+<td class="align_left"><code>$ grep foo bar.txt</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">grep -i &lt;string&gt; &lt;file&gt;</code></td>
+<td class="align_left">Find case-insensitively</td>
+<td class="align_left"><code>$ grep -i foo bar.txt</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">ps</code></td>
+<td class="align_left">Show processes</td>
+<td class="align_left"><code>$ ps aux</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">top</code></td>
+<td class="align_left">Show processes (sorted)</td>
+<td class="align_left"><code>$ top</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">kill -&lt;level&gt; &lt;pid&gt;</code></td>
+<td class="align_left">Kill a process</td>
+<td class="align_left"><code>$ kill -15 24601</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">pkill -&lt;level&gt; -f &lt;name&gt;</code></td>
+<td class="align_left">Kill matching processes</td>
+<td class="align_left"><code>$ pkill -15 -f spring</code></td>
+</tr>
+</tbody>
+</table>
+
+#### Directories
+
+<table class="tabular">
+<tbody>
+<tr class="bottom_border">
+<td class="align_left"><strong>Command</strong></td>
+<td class="align_left"><strong>Description</strong></td>
+<td class="align_left"><strong>Example</strong></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">mkdir &lt;name&gt;</code></td>
+<td class="align_left">Make directory with name</td>
+<td class="align_left"><code>$ mkdir foo</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">pwd</code></td>
+<td class="align_left">Print working directory</td>
+<td class="align_left"><code>$ pwd</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">cd &lt;dir&gt;</code></td>
+<td class="align_left">Change to &lt;dir&gt;</td>
+<td class="align_left"><code>$ cd foo/</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">cd ~/&lt;dir&gt;</code></td>
+<td class="align_left">cd relative to home</td>
+<td class="align_left"><code>$ cd ~/foo/</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">cd</code></td>
+<td class="align_left">Change to home directory</td>
+<td class="align_left"><code>$ cd</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">cd -</code></td>
+<td class="align_left">Change to previous directory</td>
+<td class="align_left"><code>$ cd &amp;&amp; pwd &amp;&amp; cd -</code></td>
+</tr>
+<tr>
+<td class="align_left">
+<code class="tt">.</code><span class="intersentencespace"></span>
+</td>
+<td class="align_left">The current directory</td>
+<td class="align_left">
+<code>$ cp ~/foo.txt .</code><span class="intersentencespace"></span>
+</td>
+</tr>
+<tr>
+<td class="align_left">
+<code class="tt">..</code><span class="intersentencespace"></span>
+</td>
+<td class="align_left">One directory up</td>
+<td class="align_left"><code>$ cd ..</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">find</code></td>
+<td class="align_left">Find files &amp; directories</td>
+<td class="align_left"><code>$ find . -name foo*.*</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">cp -r &lt;old&gt; &lt;new&gt;</code></td>
+<td class="align_left">Copy recursively</td>
+<td class="align_left">
+<code>$ cp -r ~/foo .</code><span class="intersentencespace"></span>
+</td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">rmdir &lt;dir&gt;</code></td>
+<td class="align_left">Remove (empty) dir</td>
+<td class="align_left"><code>$ rmdir foo/</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">rm -rf &lt;dir&gt;</code></td>
+<td class="align_left">Remove dir &amp; contents</td>
+<td class="align_left"><code>$ rm -rf foo/</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">grep -ri &lt;string&gt; &lt;dir&gt;</code></td>
+<td class="align_left">Grep recursively (case-insensitive)</td>
+<td class="align_left"><code>$ grep -ri foo bar/</code></td>
+</tr>
+</tbody>
+</table>
 
 ### SOLID, KISS, YAGNI
 
@@ -159,6 +496,8 @@ HTTP коды состояния делятся на пять групп:
 - PUT - тоже самое, что и POST. Разница между ними заключается в том, что многократные вызовы PUT будут приносить один и тот же результат, без side effect.
 
 ### Regular Expressions
+
+Online builder - https://regex101.com/
 
 ## Backend
 
