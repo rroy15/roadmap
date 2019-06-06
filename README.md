@@ -137,7 +137,7 @@ HTTP коды состояния делятся на пять групп:
 
 ### Python
 
-#### Virtual environments and pip
+### Virtual environments and pip
 
 Creating virtual environments:
 
