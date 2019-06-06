@@ -21,7 +21,7 @@ Python backend developer roadmap.
 [Backend](#backend)
 
 - [Python](#python) (standards and best practices)
-- Pip
+- Virtual environments and pip (#virtual-enviroments-and-pip)
 - Relational DB and SQL (Postgresql)
 - Django
   - Models and databases
@@ -136,4 +136,54 @@ HTTP коды состояния делятся на пять групп:
 
 
 ### Python
+
+#### Virtual environments and pip
+
+Creating virtual environments:
+
+`$ python3 -m venv ~/.virtualenvs/my-env`
+
+Activating a virtual environment:
+
+`$ source ~/.virtualenvs/my-env/bin/activate`
+
+Deactivating a virtual environment:
+
+`$ deactivate`
+
+Searching packages:
+
+`$ pip search **package_name**`
+
+or simply go to [<pypi.org>](pypi.org)
+
+Installing a package:
+
+`$ pip install **package_name**`
+
+Installing a specific version of a package:
+
+`$ pip install **package_name**==1.2`
+
+Upgraging a package:
+
+`$ pip install --upgrade **package_name**`
+
+Show an information about a particular package:
+
+`$ pip show **package_name**`
+
+Display all packages installed in the virtual environment:
+
+`$ pip list`
+
+Save list of packages in a txt file:
+
+`$ pip freeze > requirements.txt`
+
+Installing packages from a txt file:
+
+`$ pip install -r requirements.txt`
+
+More about `pip`: https://docs.python.org/3/installing/index.html#installing-index
 
