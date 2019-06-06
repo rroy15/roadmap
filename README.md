@@ -21,7 +21,7 @@ Python backend developer roadmap.
 [Backend](#backend)
 
 - [Python](#python) (standards and best practices)
-- Virtual environments and pip (#virtual-enviroments-and-pip)
+- [Virtual environments and pip](#virtual-enviroments-and-pip)
 - Relational DB and SQL (Postgresql)
 - Django
   - Models and databases
