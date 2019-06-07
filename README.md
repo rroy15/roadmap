@@ -10,6 +10,7 @@ Python backend developer roadmap.
   - [Backing up and sharing](#backing-up-and-sharing)
   - [Intermediate workflow](#intermediate-workflow)
   - [Collaborating](#collaborating)
+  - [Gitflow](#gitflow)
 - [Terminal](#terminal)
   - [Basics](#basics)
   - [Manipulating files](#manipulating-files)
