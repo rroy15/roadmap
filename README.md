@@ -5,7 +5,11 @@ Python backend developer roadmap.
 
 [General](#general)
 
-- Git and Gitflow
+- [Git and Gitflow](#git-and-gitflow)
+  - [Git Basics](#git-basics)
+  - [Backing up and sharing](#backing-up-and-sharing)
+  - [Intermediate workflow](#intermediate-workflow)
+  - [Collaborating](#collaborating)
 - [Terminal](#terminal)
   - [Basics](#basics)
   - [Manipulating files](#manipulating-files)
@@ -52,6 +56,226 @@ Python backend developer roadmap.
 - Web sockets
 
 ## General
+
+### Git and Gitflow
+
+Resource link: [Learn Enough Git to Be Dangerous](https://www.learnenough.com/git-tutorial/getting_started)
+
+Keypoints (for myself):
+
+- `git config --global alias.co checkout`
+- `git commit -am 'message'`
+- `git commit --amend`
+- `git remote add origin <link>`
+- `git checkout -b <branch>`
+- `git checkout -f` or `git reset --hard HEAD`
+- `git branch -a`
+- `git branch -d <merged_branch>`
+- `git branch -D <not_merged_branch>`
+- `git diff`
+- `git log --graph --decorate`
+- `mkdir -p` # intermediate directories
+- ``
+
+#### Git Basics
+
+<table class="tabular">
+<tbody>
+<tr class="bottom_border">
+<td class="align_left"><strong>Command</strong></td>
+<td class="align_left"><strong>Description</strong></td>
+<td class="align_left"><strong>Example</strong></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">git help</code></td>
+<td class="align_left">Get help on a command</td>
+<td class="align_left"><code>$ git help push</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">git config</code></td>
+<td class="align_left">Configure Git</td>
+<td class="align_left"><code>$ git config --global …</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">source &lt;file&gt;</code></td>
+<td class="align_left">Activate Bash changes</td>
+<td class="align_left"><code>$ source ~/.bash_profile</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">mkdir -p</code></td>
+<td class="align_left">Make intermediate directories as necessary</td>
+<td class="align_left"><code>$ mkdir -p repos/website</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">git status</code></td>
+<td class="align_left">Show the status of the repository</td>
+<td class="align_left"><code>$ git status</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">touch &lt;name&gt;</code></td>
+<td class="align_left">Create empty file</td>
+<td class="align_left"><code>$ touch foo</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">git add -A</code></td>
+<td class="align_left">Add all files or directories to staging area</td>
+<td class="align_left"><code>$ git add -A</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">git add &lt;name&gt;</code></td>
+<td class="align_left">Add given file or directory to staging area</td>
+<td class="align_left"><code>$ git add foo</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">git commit -m</code></td>
+<td class="align_left">Commit staged changes with a message</td>
+<td class="align_left"><code>$ git commit -m "Add thing"</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">git commit -am</code></td>
+<td class="align_left">Stage and commit changes with a message</td>
+<td class="align_left"><code>$ git commit -am "Add thing"</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">git diff</code></td>
+<td class="align_left">Show diffs between commits, branches, etc.<span class="intersentencespace"></span>
+</td>
+<td class="align_left"><code>$ git diff</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">git commit --amend</code></td>
+<td class="align_left">Amend the last commit</td>
+<td class="align_left"><code>$ git commit --amend</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">git show &lt;SHA&gt;</code></td>
+<td class="align_left">Show diff vs. the SHA</td>
+<td class="align_left"><code>$ git show fb738e…</code></td>
+</tr>
+</tbody>
+</table>
+
+#### Backing up and sharing
+
+<table class="tabular">
+<tbody>
+<tr class="bottom_border">
+<td class="align_left"><strong>Command</strong></td>
+<td class="align_left"><strong>Description</strong></td>
+<td class="align_left"><strong>Example</strong></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">git remote add</code></td>
+<td class="align_left">Add remote repo</td>
+<td class="align_left"><code>$ git remote add origin</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">git push -u &lt;loc&gt; &lt;br&gt;</code></td>
+<td class="align_left">Push branch to remote</td>
+<td class="align_left"><code>$ git push -u origin master</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">git push</code></td>
+<td class="align_left">Push to default remote</td>
+<td class="align_left"><code>$ git push</code></td>
+</tr>
+</tbody>
+</table>
+
+#### Intermediate workflow
+
+<table class="tabular">
+<tbody>
+<tr class="bottom_border">
+<td class="align_left"><strong>Command</strong></td>
+<td class="align_left"><strong>Description</strong></td>
+<td class="align_left"><strong>Example</strong></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">.gitignore</code></td>
+<td class="align_left">Tell Git which things to ignore</td>
+<td class="align_left"><code>$ echo .DS_store &gt;&gt; .gitignore</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">git checkout &lt;br&gt;</code></td>
+<td class="align_left">Check out a branch</td>
+<td class="align_left"><code>$ git checkout master</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">git checkout -b &lt;br&gt;</code></td>
+<td class="align_left">Check out &amp; create a branch</td>
+<td class="align_left"><code>$ git checkout -b about-page</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">git branch</code></td>
+<td class="align_left">Display local branches</td>
+<td class="align_left"><code>$ git branch</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">git merge &lt;br&gt;</code></td>
+<td class="align_left">Merge in a branch</td>
+<td class="align_left"><code>$ git merge about-page</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">git rebase</code></td>
+<td class="align_left">Do something possibly weird &amp; confusing</td>
+<td class="align_left">See “<a href="https://m.xkcd.com/1296/" target="_blank" rel="noopener">Git Commit</a>”</td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">git branch -d &lt;br&gt;</code></td>
+<td class="align_left">Delete branch (if merged)</td>
+<td class="align_left"><code>$ git branch -d about-page</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">git branch -D &lt;br&gt;</code></td>
+<td class="align_left">Delete branch (even if unmerged) <strong>(dangerous)</strong>
+</td>
+<td class="align_left"><code>$ git branch -D other-branch</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">git checkout -f</code></td>
+<td class="align_left">Force checkout, discarding changes <strong>(dangerous)</strong>
+</td>
+<td class="align_left"><code>$ git add -A &amp;&amp; git checkout -f</code></td>
+</tr>
+</tbody>
+</table>
+
+#### Collaborating
+
+<table class="tabular">
+<tbody>
+<tr class="bottom_border">
+<td class="align_left"><strong>Command</strong></td>
+<td class="align_left"><strong>Description</strong></td>
+<td class="align_left"><strong>Example</strong></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">git clone &lt;URL&gt;</code></td>
+<td class="align_left">Copy repo (incl. full history) to local disk</td>
+<td class="align_left"><code>$ git clone https://ex.co/repo.git</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">git pull</code></td>
+<td class="align_left">Pull in changes from remote repository</td>
+<td class="align_left"><code>$ git pull</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">git branch -a</code></td>
+<td class="align_left">List all branches</td>
+<td class="align_left"><code>$ git branch -a</code></td>
+</tr>
+<tr>
+<td class="align_left"><code class="tt">git checkout &lt;br&gt;</code></td>
+<td class="align_left">Check out remote branch and configure for push</td>
+<td class="align_left"><code>$ git checkout fix-trademark</code></td>
+</tr>
+</tbody>
+</table>
+
+#### Gitflow
+
+[Git flow cheatsheet](https://danielkummer.github.io/git-flow-cheatsheet/index.ru_RU.html)
 
 ### Terminal
 
