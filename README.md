@@ -22,7 +22,7 @@ Python backend developer roadmap.
 - [TCP/IP, HTTP, HTTPS and APIs](#network-communication-and-security-protocols)
 - [Regular Expressions](#regular-expressions)
 - [Semantic versioning](#semantic-versioning)
-- Character Encodings
+- [Character Encodings](#character-encodings)
 - Licenses
 - Data structures and algorithms
 - [How Browsers Work](https://www.html5rocks.com/ru/tutorials/internals/howbrowserswork/)
@@ -737,6 +737,11 @@ Given a version number MAJOR.MINOR.PATCH, increment the:
 - PATCH version when you make backwards-compatible bug fixes.
 
 Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
+
+### Character Encodings
+
+[What Every Programmer Absolutely, Positively Needs To Know About Encodings And Character Sets To Work With Text](http://kunststube.net/encoding/#fn:7bitascii)
+
 
 ## Backend
 
