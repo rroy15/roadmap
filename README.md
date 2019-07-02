@@ -52,7 +52,7 @@ Python backend developer roadmap.
 - Authentication/Authorization methodologies
 - Message Brokers
 - Search Engine
-- Docker
+- [Docker](#docker)
 - Web servers
 - Web sockets
 
@@ -745,7 +745,6 @@ Additional labels for pre-release and build metadata are available as extensions
 
 ## Backend
 
-
 ### Python
 
 ### Virtual environments and pip
@@ -797,4 +796,28 @@ Installing packages from a txt file:
 `$ pip install -r requirements.txt`
 
 More about `pip`: https://docs.python.org/3/installing/index.html#installing-index
+
+### Docker
+
+[Installing docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/).
+
+> Docker is a platfrom for developers and sysadmins to develop, deploy, and run application with containers.
+
+Docker app hierarchy:
+- Stack (defines the interactions of all the services)
+- Service (defines how container behave in production)
+- Container (a runtime instance of an image)
+
+Key terms:
+> __image__ is an executable package that includes everything needed to run an application--the code, a runtime, libraries, environment variables, and configuration files.
+> __container__ is a runtime instance of an image (what the image becomes in memory when executed).
+
+Get started: https://docs.docker.com/get-started/
+
+Docker 101: http://devopspy.com/devops/docker-101/
+
+Docker and Django: https://docs.docker.com/compose/django/
+
+Deploy django with docker-compose: http://devopspy.com/devops/deploy-django-docker-compose/
+
 
